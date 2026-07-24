@@ -1,0 +1,81 @@
+import { useTranslation } from 'react-i18next';
+import { Sun, Phone, Mail, Facebook, Instagram, Linkedin, MapPin } from 'lucide-react';
+
+export default function Footer() {
+  const { t } = useTranslation();
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <footer className="bg-slate-900 text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-8">
+          <div>
+            <div className="flex items-center gap-2 mb-4">
+              <Sun className="w-8 h-8 text-green-400" />
+              <span className="text-xl font-bold">bartsinstall</span>
+            </div>
+            <p className="text-slate-400 leading-relaxed">
+              {t('footer.tagline')}
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-semibold mb-4">{t('footer.contact.title')}</h3>
+            <div className="space-y-3">
+              <a
+                href="tel:+48123456789"
+                className="flex items-center gap-2 text-slate-400 hover:text-green-400 transition-colors"
+              >
+                <Phone className="w-5 h-5" />
+                <span>+48 507 304 153</span>
+              </a>
+              <a
+                href="mailto:kacper.bartkowski1@o2.pl"
+                className="flex items-center gap-2 text-slate-400 hover:text-green-400 transition-colors"
+              >
+                <Mail className="w-5 h-5" />
+                <span>kacper.bartkowski1@o2.pl</span>
+              </a>
+              <div className="flex items-center gap-2 text-slate-400">
+  <MapPin className="w-5 h-5" />
+  <span>13-230 Lidzbark, Polska</span>
+</div>
+            </div>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-semibold mb-4">{t('footer.follow')}</h3>
+            <div className="flex gap-4">
+              <a
+                href="https://www.facebook.com/share/1AkLh1ZsXu/?mibextid=wwXIfr"
+                 target="_blank" 
+  rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-slate-800 hover:bg-green-500 flex items-center justify-center transition-colors"
+              >
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full bg-slate-800 hover:bg-green-500 flex items-center justify-center transition-colors"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full bg-slate-800 hover:bg-green-500 flex items-center justify-center transition-colors"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="pt-8 border-t border-slate-800 text-center text-slate-400">
+          <p>
+            &copy; {currentYear} bartsinstall. {t('footer.rights')}
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}
